@@ -18,24 +18,38 @@
 				<div class="col-md-8">
 					<form action="#" th:action="@{/estudantes/atualizar/{id}(id=${estudante.id})}" th:object="${estudante}" method="post">
 						<div class="row">
-							<div class="form-group col-md-6">
+							<div class="form-group col-md-8">
+								<label for="nome" class="col-form-label" style="font-weight: bold;">Matricula *</label>
+								<input type="text" readonly="readonly" th:field="${estudante.matricula}" class="form-control" id="matricula" placeholder="Matricula">
+								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{matricula}" class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
 								<label for="nome" class="col-form-label">Nome</label> 
-								<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome"> 
+								<input type="text" th:field="${estudante.nome}" class="form-control" id="nome" placeholder="Nome">
 								<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="email" class="col-form-label">Email</label> 
-								<input type="text" th:field="*{email}" class="form-control" id="email" placeholder="Email"> 
+								<input type="text" th:field="${estudante.email}" class="form-control" id="email" placeholder="Email">
 								<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
 							</div>
 							<div class="form-group col-md-8">
 								<label for="telefone" class="col-form-label">Telefone</label> 
-								<input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="telefone"> 
-								<span th:if="${#fields.hasErrors('telefone')}" th:errors="telefone" class="text-danger"></span>
+								<input type="text" th:field="${estudante.telefone}" class="form-control" id="telefone" placeholder="Telefone">
+								<span th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="text-danger"></span>
+							</div>
+							<div class="form-group col-md-8">
+								<label for="telefone" class="col-form-label">Curso</label>
+								<input type="text" th:field="${estudante.curso}" class="form-control" id="curso" placeholder="Curso">
+								<span th:if="${#fields.hasErrors('telefone')}" th:errors="*{curso}" class="text-danger"></span>
 							</div>
 
 							<div class="form-group col-md-8">
 								<input type="submit" class="btn btn-primary" value="Atualizar Estudante">
+								<a th:href="@{/estudantes/listar}" class="btn btn-secondary">Cancelar</a>
+							</div>
+							<div class="form-group col-md-8"  style="padding: 10px;color: red;">
+								<span th:text="${message}"></span>
 							</div>
 						</div>
 					</form>

@@ -13,6 +13,8 @@ public interface EstudanteRepository extends JpaRepository<Estudante,Integer> {
 
 	List<Estudante> findByNome(String nome);
 
+	Optional<Estudante> getByMatricula(String matricula);
+
 	Optional<Estudante> getById(Integer id);
 
 }

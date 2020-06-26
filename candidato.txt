@@ -1,0 +1,16 @@
+Nome: Kevim Such
+Atividade feita em 2hrs ;)
+
+Utilizei o banco H2 para servir de banco temporário para os testes.
+Deixei a matrícula como campo único para refletir um pouco melhor na realidade, e uma pequena validação de email.
+Também fiz umas validações de quantidade de caracteres, para evitar erro no banco de dados. E também coloquei validações
+ no caso de tentativas editar ou apagar um código não existente.
+
+ Enfim, obrigado pelo o teste. Foi divertido fazer.
+ Atensiosamente Kevim Such.
+
+ 26/06/2020
+
+
+
+

@@ -16,6 +16,8 @@ public interface EstudandeService {
 
 	Estudante buscarEstudante(Integer id);
 
+	Estudante buscaPorMatricula(String matricula);
+
 	void atualizarEstudante(@Valid Estudante estudante);
 
 	void deletar(Integer id);

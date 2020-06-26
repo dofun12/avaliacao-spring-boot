@@ -1,9 +1,12 @@
+/**
+  Utilizado pelo o H2 para criar o banco de dados
+ */
 drop table if exists estudante;
 create table if not exists estudante(
   id int primary key auto_increment,
   nome varchar(255),
   email varchar(255),
-  matricula varchar(255),
+  matricula varchar(255) unique not null,
   curso varchar(255),
   telefone varchar(20)
 );
